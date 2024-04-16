@@ -1,0 +1,57 @@
+nav{
+  width: 95%;
+  height: 150px;
+  margin: 0 auto;
+  background-color: #a88c8c;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+   
+}
+.logo{
+  padding: 15px;
+  width: 175px;
+  height: auto;
+}
+.info {
+  list-style: none; 
+  display: flex;
+  padding: 100px;
+}
+
+.info li {
+  align-items: center;
+  display: flex;
+  margin-right: 20px; 
+}
+
+.info li:last-child {
+  margin-right: 0; 
+}
+
+.info li img {
+  border-radius: 25px;
+  vertical-align: middle; 
+  width: 50px;
+}
+
+.info li span {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-left: 5px; 
+  vertical-align: middle; /* Alinear verticalmente las descripciones */
+}
+
+.navegacion .info li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Eliminar subrayado */
+  color: inherit; /* Heredar el color del texto de su contenedor */
+}
+
