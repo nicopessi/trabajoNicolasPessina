@@ -1,0 +1,141 @@
+/Funcion para filtrar propiedades
+function filtrarPropiedades (){
+    let filtroUbicacion = prompt("Ingrese la ciudad donde desea comprar(deje en blanco si no es relevante)");
+    let filtroAmbientes = Number(prompt("Ingrese la cantidad de ambientes deseados(deje en blanco si no es relevante)"));
+    let filtroDormitorios = Number(prompt("Ingrese la cantidad de dormitorios deseados(deje en blanco si no es relevante)"));
+    let filtroBaños = Number(prompt("Ingrese la cantidad de baños deseados(deje en blanco si no es relevante)"));
+    let filtroCochera = prompt("Desea con cochera:  si / no (deje en blanco si no es relevante)");
+
+    propiedades.forEach(propiedad => {
+        if ((filtroUbicacion === "" || propiedad.ubicacion.toLowerCase() === filtroUbicacion.toLowerCase()) && 
+            (isNaN(filtroAmbientes) || propiedad.ambientes === filtroAmbientes) &&
+            (isNaN(filtroDormitorios) || propiedad.dormitorios >= filtroDormitorios) &&
+            (isNaN(filtroBaños) || propiedad.baños === filtroBaños) &&
+            (filtroCochera === "" || propiedad.cochera.toLowerCase() === filtroCochera.toLowerCase())) {
+            console.log(`Listado de propiedades filtradas: Nombre: ${propiedad.name}, , Ambientes: ${propiedad.ambientes}, Ubicacion: ${propiedad.ubicacion}, Dormitorios: ${propiedad.dormitorios}, Baños: ${propiedad.baños}, Cochera: ${propiedad.cochera}`);
+        }
+    });
+    return;
+}
+
+//Funcion para filtrar propiedades
+function filtrarPropiedades() {
+    let filtroTipo = prompt("Ingrese el tipo de propiedad deseado (deje en blanco si no es relevante)");
+    let filtroUbicacion = prompt("Ingrese la ciudad donde desea comprar(deje en blanco si no es relevante)");
+    let filtroAmbientes = Number(prompt("Ingrese la cantidad de ambientes deseados(deje en blanco si no es relevante)"));
+    let filtroDormitorios = Number(prompt("Ingrese la cantidad de dormitorios deseados(deje en blanco si no es relevante)"));
+    let filtroBaños = Number(prompt("Ingrese la cantidad de baños deseados(deje en blanco si no es relevante)"));
+    let filtroCochera = prompt("Desea con cochera:  si / no (deje en blanco si no es relevante)");
+
+    propiedades.forEach(propiedad => {
+        if (
+            (filtroTipo === "" || propiedad.tipo.toLowerCase() === filtroTipo.toLowerCase()) &&
+            (filtroUbicacion === "" || propiedad.ubicacion.toLowerCase() === filtroUbicacion.toLowerCase()) &&
+            (isNaN(filtroAmbientes) || propiedad.ambientes === filtroAmbientes) &&
+            (isNaN(filtroDormitorios) || propiedad.dormitorios === filtroDormitorios) &&
+            (isNaN(filtroBaños) || propiedad.baños === filtroBaños) &&
+            (filtroCochera === "" || propiedad.cochera.toLowerCase() === filtroCochera.toLowerCase())
+        ) {
+            document.write(`Nombre: ${propiedad.name}, Tipo: ${propiedad.tipo}, Ambientes: ${propiedad.ambientes}, Ubicacion: ${propiedad.ubicacion}, Dormitorios: ${propiedad.dormitorios}, Baños: ${propiedad.baños}, Cochera: ${propiedad.cochera}`);
+        }
+    });
+
+    // Salir del bucle después de mostrar las propiedades
+    break;
+}
+
+
+function filtrarPropiedades() {
+    let filtroAmbientes = Number(prompt("Ingrese la cantidad de ambientes deseados (deje en blanco si no es relevante)"));
+    let filtroBaños = Number(prompt("Ingrese la cantidad de baños deseados (deje en blanco si no es relevante)"));
+    let filtroTipo = prompt("Ingrese el tipo de propiedad deseado (deje en blanco si no es relevante)");
+
+    propiedades.forEach(propiedad => {
+        if ((filtroAmbientes === null || propiedad.ambientes === filtroAmbientes) &&
+            (filtroBaños === null || propiedad.baños === filtroBaños) &&
+            (filtroTipo === "" || propiedad.tipo.toLowerCase() === filtroTipo.toLowerCase())) {
+            // La propiedad cumple con todos los criterios especificados, mostrarla
+            console.log(`Nombre: ${propiedad.name}, Tipo: ${propiedad.tipo}, Ambientes: ${propiedad.ambientes}, Baños: ${propiedad.baños}`);
+        }
+    });
+}
+ropiedades.forEach(propiedad => {
+    if ((isNaN(filtroTipo) || propiedad.tipo === filtroTipo) && 
+        (filtroUbicacion === "" || propiedad.ubicacion.toLowerCase() === filtroUbicacion.toLowerCase()) && 
+        (isNaN(filtroAmbientes) || propiedad.ambientes === filtroAmbientes) &&
+        (isNaN(filtroDormitorios) || propiedad.dormitorios === filtroDormitorios) &&
+        (isNaN(filtroBaños) || propiedad.baños === filtroBaños) &&
+        (filtroCochera === "" || propiedad.cochera.toLowerCase() === filtroCochera.toLowerCase())) {
+        document.write(`Listado de propiedades filtradas: Nombre: ${propiedad.name}, Tipo: ${propiedad.tipo}, Ambientes: ${propiedad.ambientes}, Ubicacion: ${propiedad.ubicacion}, Dormitorios: ${propiedad.dormitorios}, Baños: ${propiedad.baños}, Cochera: ${propiedad.cochera}`);
+    }
+});
+(propiedad.tipo === Number(tipoPropiedad))
+// Función constructora
+function Propiedad(name, tipo, ubicacion, precio, ambientes, tamañoTerreno, tamañoCubierto, cochera, baños, antiguedad, dormitorios){
+    this.name = name;
+    this.tipo = tipo;
+    this.ubicacion = ubicacion;
+    this.precio = precio;
+    this.ambientes = ambientes;
+    this.tamañoTerreno = tamañoTerreno;
+    this.tamañoCubierto = tamañoCubierto;
+    this.cochera = cochera;
+    this.baños = baños;
+    this.antiguedad = antiguedad;
+    this.dormitorios = dormitorios;
+
+// Definición del constructor de propiedades
+function Property(type, rooms, location, price) {
+    this.type = type;
+    this.rooms = rooms;
+    this.location = location;
+    this.price = price;
+}
+
+// Array para almacenar todas las propiedades
+let properties = [];
+
+// Función para agregar una nueva propiedad
+function addProperty() {
+    let type = prompt("Ingrese el tipo de propiedad (Departamento, Casa, Galpón):");
+    let rooms = Number(prompt("Ingrese la cantidad de habitaciones:"));
+    let location = prompt("Ingrese la ubicación de la propiedad:");
+    let price = Number(prompt("Ingrese el precio de la propiedad:"));
+
+    // Crear un nuevo objeto Property y agregarlo al array
+    let property = new Property(type, rooms, location, price);
+    properties.push(property);
+
+    console.log("¡La propiedad ha sido agregada con éxito!");
+}
+
+
+// Función para mostrar todas las propiedades
+function showProperties() {
+    console.log("Listado de propiedades:");
+    properties.forEach((property, index) => {
+        console.log(`Propiedad ${index + 1}: Tipo: ${property.type}, Habitaciones: ${property.rooms}, Ubicación: ${property.location}, Precio: ${property.price}`);
+    });
+}
+
+// Función para buscar propiedades por tipo
+function searchPropertiesByType() {
+    let typeToSearch = prompt("Ingrese el tipo de propiedad a buscar (Departamento, Casa, Galpón):");
+    let foundProperties = properties.filter(property => property.type.toLowerCase() === typeToSearch.toLowerCase());
+
+    if (foundProperties.length > 0) {
+        console.log(`Propiedades encontradas de tipo ${typeToSearch}:`);
+        foundProperties.forEach(property => {
+            console.log(`Tipo: ${property.type}, Habitaciones: ${property.rooms}, Ubicación: ${property.location}, Precio: ${property.price}`);
+        });
+    } else {
+        console.log(`No se encontraron propiedades de tipo ${typeToSearch}.`);
+    }
+}
+
+// Ejemplo de uso
+addProperty();
+addProperty();
+addProperty();
+showProperties();
+searchPropertiesByType();
