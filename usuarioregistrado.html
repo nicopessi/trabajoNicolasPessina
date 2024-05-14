@@ -36,9 +36,12 @@
         <h2>Formulario de Datos</h2>
         <form id="dataForm">
             <div class="form-group">
+                <ul>
+                    <li>
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre" required>
-           
+            </li>
+            <li>
             <label for="tipo">Tipo:</label>
                 <select id="tipo" name="tipo" required>
                     <option value="">Seleccione un tipo</option>
@@ -46,34 +49,40 @@
                     <option value="terreno">Terreno</option>
                     <option value="galpon">Galpon</option>
                 </select>
-          
+           </li>
+           <li>
             
                 <label for="ubicacion">Ubicacion:</label>
                 <input type="text" id="ubicacion" name="ubicacion" placeholder="Ingrese ciudad" required>
-            
-            
+            </li>
+            <li>
                 <label for="precio">Precio:</label>
                 <input type="text" id="precio" name="precio" placeholder="Ingrese el precio" required>
-            
+            </li>
+            <li>
                 <label for="ambientes">Cantidad de ambientes:</label>
                 <select id="ambientes" name="ambientes" required>
                     <option value="">Seleccione cantidad</option>
                     <option value="A">1</option> <option value="B">2</option> <option value="C">mas de 2</option>
                     </select>
-            
+                </li>
+                <li>
                 <label for="tamañoterreno">Tamaño terreno:</label>
                 <input type="text" id="tamañoterreno" name="tamañoterreno" placeholder="Ingrese Tamaño de terreno en mts2" required>
-            
+            </li>
+            <li>
                 <label for="tamañocubierto">Tamaño cubierto:</label>
                 <input type="text" id="tamañocubierto" name="tamañocubierto" placeholder="Ingrese Tamaño cubierto" required>
-            
+            </li>
+            <li>
                 <label for="cochera">Cochera:</label>
                 <select id="cochera" name="cochera" required>
                     <option value="">Seleccione un tipo</option>
                     <option value="si">si</option>
                     <option value="no">no</option>
                 </select>
-            
+            </li>
+            <li>
                 <label for="baños">Baños:</label>
                 <select id="baños" name="baños" required>
                     <option value="">Seleccione cantidad</option>
@@ -81,10 +90,12 @@
                     <option value="B">2</option>
                     <option value="C">mas de 2</option>
                 </select>
-            
+            </li>
+            <li>
                 <label for="antiguedad">Años de antiguedad:</label>
                 <input type="text" id="antiguedad" name="antiguedad" placeholder="Ingrese años de antiguedad" required>
-            
+            </li>
+            <li>
                 <label for="dormitorios">Dormitorios:</label>
                 <select id="dormitorios" name="dormitorios" required>
                     <option value="">Seleccione cantidad de dormitorios</option>
@@ -92,14 +103,17 @@
                     <option value="B">2</option>
                     <option value="C">Mas de 2</option>
                 </select>
-            
+            </li>
+            <li>
                 <label for="descripcion">Describe la propiedad:</label>
                 <input type="text" id="descripcion" name="descripcion" placeholder="Ingrese una descripcion" required>
+            </li>
+            </ul>
            
                 <button id="guardarDatos">Guardar Datos</button>
         </form>
     </div>
- 
+ <br>
     <h1>Filtrar Propiedades</h1>
     <label for="selector-tipoPropiedad">Elije un tipo de propiedad:</label>
     <select id="selector-propiedad">
