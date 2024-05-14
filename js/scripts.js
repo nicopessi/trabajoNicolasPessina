@@ -8,6 +8,8 @@ class usuario {
     
 
 }
+
+
 const user = new usuario ('jlinmobiliaria', 'jl');
 localStorage.setItem("user", JSON.stringify(user));
 
@@ -146,8 +148,21 @@ if (guardarDatosButton) {
         const nuevaPropiedad = new Propiedad (nombre, tipo, ubicacion, precio, ambientes, tamañoTerreno, tamañoCubierto, cochera, baños, antiguedad, dormitorios, descripcion);
         propiedades.push(nuevaPropiedad);
        
+        if (!nombre || !tipo || !ubicacion || !precio || !ambientes || !tamañoTerreno || !tamañoCubierto || !cochera || !baños || !antiguedad || !dormitorios || !descripcion) {
+            Swal.fire({
+                title: "Error",
+                text: "Por favor, complete todos los campos obligatorios.",
+                icon: "error"
+            });
+            return; 
+        }
         document.getElementById("dataForm").reset();
-        alert("La propiedad ha sido agregada con exito!");
+        Swal.fire({
+            title: "Excelente!",
+            text: "Propiedad agregada!",
+            icon: "success"
+          });
+        
     });
 }
 
@@ -156,12 +171,28 @@ function login(username, password) {
     const userRegistrado = JSON.parse(localStorage.getItem("user"));
     
     if (userRegistrado && username === userRegistrado.username && password === userRegistrado.password) {
-        alert("Inicio de sesión exitoso");
-        window.location.href = "../usuarioregistrado.html";
-        
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "¡Inicio de sesión exitoso!",
+            showConfirmButton: false,
+            timer: 1500
+        }).then(() => {
+            window.location.href = "../usuarioregistrado.html";
+            submitButton.disabled = false;
+        });
     } else {
+        Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "¡Usuario o contraseña incorrectos!",
+            showConfirmButton: false,
+            timer: 1500
+        })
+        .then(() => {
+            submitButton.disabled = false;
+        })
         
-        alert("Usuario o contraseña incorrectos");
     }
 }
 
@@ -171,6 +202,8 @@ if (submitButton) {
     submitButton.addEventListener("click", function () {
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
+        // Desactivar el botón mientras se procesa la autenticación
+        submitButton.disabled = true;
         login(username, password);
     });
 }
