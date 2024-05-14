@@ -202,7 +202,7 @@ if (submitButton) {
     submitButton.addEventListener("click", function () {
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
-        // Desactivar el botón mientras se procesa la autenticación
+        
         submitButton.disabled = true;
         login(username, password);
     });
